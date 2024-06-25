@@ -33,12 +33,19 @@
   <body>
  	<div id="content">
 		<div id="mySidenav" class="sidenav">
-			<select id="model-select">
+			<!--<select id="model-select">
             <option id="1" value="1" selected>CAR1</option>
             <option id="2" value="2">CAR2</option>
             <option id="3" value="3">CAR3</option>
             <option id="4" value="4">CAR4</option>
-        </select>
+        </select>-->
+        <div id="tab-list">
+		<button id="1" value="1">CAR1</button>
+		<button id="2" value="2">CAR2</button>
+		<button id="3" value="3">CAR3</button>
+		<button id="4" value="4">CAR4</button>
+		</div>
+		
 		</div>
 
 		<div id="container" style="position: fixed;"></div>
@@ -80,12 +87,12 @@
 		init();
 		animate();
 		
-		 let selectInput = document.getElementById('model-select');
+		 let selectInput = document.getElementById('tab-list');
         let modelName = selectInput.value;
 
          loadModel(modelName);
 
-        selectInput.addEventListener("change", (e) => {
+        selectInput.addEventListener("click", (e) => {
             modelName = e.target.value;
 			if (current_object != null) {
 				scene.remove(current_object);
